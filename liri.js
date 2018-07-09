@@ -38,18 +38,24 @@ switch (action) {
 
     case 'spotify-this-song':
 
-        spotify.search({ type: 'track', query: `${search}`}, function (err, data) {
+        spotify.search({ type: 'track', query: `${search}` }, function (err, data) {
             if (err) {
                 console.log('Error occurred: ' + err);
                 return;
             }
 
             console.log("this finna load");
-            // console.log(data.tracks.items); <<way too much stuff to go through
-            for(var prop in data.tracks.items){
-                console.log("********************")
-                console.log(data.tracks.items[prop].name);
+            // console.log(data.tracks.items); //<<way too much stuff to go through
+            for (var prop in data.tracks.items) {
+                console.log(" ")
+                console.log("********AIGHT FAM WE GOT************")
+                console.log(" ")
                 console.log(data.tracks.items[prop].album.artists[0].name);
+                console.log("Who plays : " + data.tracks.items[prop].name);
+                console.log("listen to this bop here: " + data.tracks.items[prop].preview_url);
+                console.log("From the album : " + data.tracks.items[prop].album.name);
+                console.log(" ")
+                
             }
             // Do something with 'data'
         });
